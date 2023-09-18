@@ -25,7 +25,7 @@ jobs:
       - name: Push new release
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_user_name: github-actions-dump-bot
+          commit_author: github-actions-dump-bot <github-actions-dump-bot@dump.tec.br>
           commit_message: release ${{ github.event.release.tag_name }}
       - name: Create and push backup branch
         run: |
