@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Create Release
+    name: Commit Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -18,3 +18,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Test
         run: ls -lsa && declare -p
+      - name: release
+        run: echo ${{ github.event.release.name }} && echo " \n ___ \n " && echo ${{ github.event.release.body }}
