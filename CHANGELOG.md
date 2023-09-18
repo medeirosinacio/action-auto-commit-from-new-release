@@ -1,4 +1,1 @@
-to be prepended
-to be prepended
-to be prepended
-## 0.0.23 \n **Full Changelog**: https://github.com/medeirosinacio/action-auto-commit-from-new-release/compare/0.0.22...0.0.23
+## 0.0.25 \n **Full Changelog**: https://github.com/medeirosinacio/action-auto-commit-from-new-release/compare/0.0.24...0.0.25 \n
