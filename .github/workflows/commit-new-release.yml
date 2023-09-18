@@ -1,3 +1,5 @@
+name: Commit new Release
+
 on:
   release:
     types:
@@ -5,15 +7,13 @@ on:
     tags:
       - '*.*'
 
-name: Commit new Release
-
 jobs:
-  commit:
+  build:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ls -lsa && declare -p
