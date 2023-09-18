@@ -1,0 +1,19 @@
+on:
+  release:
+    types:
+      - 'published'
+    tags:
+      - '*.*'
+
+name: Commit new Release
+
+jobs:
+  commit:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        run: ls -lsa && declare -p
