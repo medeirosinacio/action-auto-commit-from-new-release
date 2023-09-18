@@ -62,5 +62,3 @@ Neste fluxo de trabalho:
 
 Isso permite que você mantenha um registro organizado de todas as suas releases no arquivo de changelog e tenha uma
 branch de backup correspondente para cada release publicada.
-
-tste

@@ -19,10 +19,13 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - name: Commit new release
+      - name: Write CHANGELOG
         run: |
           { printf "### Release ${{ github.event.release.tag_name }} \n\n${{ github.event.release.body }}\n\n"; cat CHANGELOG.md; } > tmp.txt && mv tmp.txt CHANGELOG.md
-      - name: Push new release
+      - name: Write version in composer.json
+        run: |
+          file="composer.json" && newVersion="${{ github.event.release.tag_name }}" && version=$(awk -F '[:"]+' '/"version"/{print $4}' "$file") && sed -i "s/\"version\": \"$version\"/\"version\": \"$newVersion\"/" "$file"
+      - name: Commit and push new release
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: release ${{ github.event.release.tag_name }}
