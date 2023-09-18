@@ -23,8 +23,8 @@ jobs:
         run: ls -lsa && declare -p
       - name: release
         run: |
-          { printf "### Release ${{ github.event.release.name }} \n\n${{ github.event.release.body }}\n"; cat CHANGELOG.md; } > tmp.txt && mv tmp.txt CHANGELOG.md
+          { printf "### Release ${{ github.event.release.tag_name }} \n\n${{ github.event.release.body }}\n\n"; cat CHANGELOG.md; } > tmp.txt && mv tmp.txt CHANGELOG.md
       - name: commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: release ${{ github.event.release.name }}
+          commit_message: release ${{ github.event.release.tag_name }}
