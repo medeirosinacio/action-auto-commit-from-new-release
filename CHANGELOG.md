@@ -1,1 +1,2 @@
-## 0.0.25 \n **Full Changelog**: https://github.com/medeirosinacio/action-auto-commit-from-new-release/compare/0.0.24...0.0.25 \n
+## 0.0.25 
+**Full Changelog**: https://github.com/medeirosinacio/action-auto-commit-from-new-release/compare/0.0.24...0.0.25
