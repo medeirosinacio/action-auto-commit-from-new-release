@@ -11,4 +11,3 @@ Até: 00/Setembro/0001
 - Loren ipsulum. [(LORE871)](https://test.atlassian.net/browse/LORE871) [#503](https://github.com/testnologia/release-test/pull/503)
 - Loren ipsulum. [(LORE891)](https://test.atlassian.net/browse/LORE891) [#504](https://github.com/testnologia/release-test/pull/504)
 - Loren ipsulum. [(LORE893)](https://test.atlassian.net/browse/LORE893) [#506](https://github.com/testnologia/release-test/pull/506)
-
