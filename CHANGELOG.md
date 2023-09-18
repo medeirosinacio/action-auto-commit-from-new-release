@@ -1,3 +1,7 @@
+### Release 0.0.38 
+
+**Full Changelog**: https://github.com/medeirosinacio/action-auto-commit-from-new-release/compare/0.0.37...0.0.38
+
 ### Release 0.0.37 
 
 **Full Changelog**: https://github.com/medeirosinacio/action-auto-commit-from-new-release/compare/0.0.36...0.0.37
