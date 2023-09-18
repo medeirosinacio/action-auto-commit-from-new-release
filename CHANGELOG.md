@@ -1,3 +1,7 @@
+### Release 1.1 
+
+- Modificado o readme para testes
+
 ### Release 1.0 
 
 **Full Changelog**: https://github.com/medeirosinacio/action-auto-commit-from-new-release/compare/0.0.39...1.0
