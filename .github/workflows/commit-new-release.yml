@@ -26,8 +26,6 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_user_name: github-actions-dump-bot
-          commit_user_email: github-actions-dump-bot@dump.tec.br
-          commit_author: Dump Bot <github-actions-dump-bot@dump.tec.br>
           commit_message: release ${{ github.event.release.tag_name }}
       - name: Create and push backup branch
         run: |
