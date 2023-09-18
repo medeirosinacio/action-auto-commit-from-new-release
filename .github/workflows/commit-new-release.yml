@@ -22,7 +22,7 @@ jobs:
       - name: Test
         run: ls -lsa && declare -p
       - name: release
-        run: echo -e "### Release ${{ github.event.release.name }} \n\n${{ github.event.release.body }}" | cat - CHANGELOG.md  | tee CHANGELOG.md
+        run: echo -e "### Release ${{ github.event.release.name }} \n\n${{ github.event.release.body }}\n" | cat - CHANGELOG.md  | tee CHANGELOG.md
       - name: commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
