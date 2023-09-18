@@ -19,4 +19,9 @@ jobs:
       - name: Test
         run: ls -lsa && declare -p
       - name: release
-        run: echo ${{ github.event.release.name }} && echo " \n ___ \n " && echo ${{ github.event.release.body }}
+        run: echo "## ${{ github.event.release.name }} \n ${{ github.event.release.body }}" >> ./CHANGELOG.md
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: 'test'
