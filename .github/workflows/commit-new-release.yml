@@ -26,9 +26,8 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: release ${{ github.event.release.tag_name }}
-      - name: Create branch from backup
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          branch: release/${{ github.event.release.tag_name }}
-          create_branch: true
-          push_options: '--force'
+      - name: Create and push backup branch
+        run: |
+          backup_branch="release/${{ github.event.release.tag_name }}"
+          git checkout -b "$backup_branch"
+          git push origin "$backup_branch"
