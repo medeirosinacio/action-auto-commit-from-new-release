@@ -1,0 +1,29 @@
+name: Commit new Release
+
+on:
+  release:
+    types:
+      - 'published'
+      - 'edited'
+    tags:
+      - '*.*'
+
+jobs:
+  build:
+    name: Commit Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Test
+        run: ls -lsa && declare -p
+      - name: release
+        run: echo "## ${{ github.event.release.name }} \n ${{ github.event.release.body }}" >> ./CHANGELOG.md
+      - name: commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply changes
