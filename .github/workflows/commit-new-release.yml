@@ -14,21 +14,19 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           ref: main
           fetch-depth: 0
-      - name: Test
-        run: ls -lsa && declare -p
-      - name: release
+      - name: Commit new release
         run: |
           { printf "### Release ${{ github.event.release.tag_name }} \n\n${{ github.event.release.body }}\n\n"; cat CHANGELOG.md; } > tmp.txt && mv tmp.txt CHANGELOG.md
-      - name: commit
+      - name: Push new release
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: release ${{ github.event.release.tag_name }}
-      - name: commit
+      - name: Create branch from backup
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: release/${{ github.event.release.tag_name }}
