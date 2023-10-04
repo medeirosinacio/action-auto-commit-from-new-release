@@ -1,11 +1,8 @@
 name: Commit new Release
 
 on:
-  release:
-    types:
-      - 'published'
-    tags:
-      - '*.*'
+  push:
+    types: branch
 
 jobs:
   commit:
@@ -20,10 +17,4 @@ jobs:
           ref: main
           fetch-depth: 0
       - name: Test
-        run: ls -lsa && declare -p
-      - name: release
-        run: (echo "## ${{ github.event.release.name }} \n ${{ github.event.release.body }} \n"; cat ./CHANGELOG.md) > ./CHANGELOG.md
-      - name: commit
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: release ${{ github.event.release.name }}
+        run: apt list --installed
