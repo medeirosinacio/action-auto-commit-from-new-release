@@ -1,8 +1,6 @@
 name: Commit new Release
 
-on:
-  push:
-    types: branch
+on: [push]
 
 jobs:
   commit:
