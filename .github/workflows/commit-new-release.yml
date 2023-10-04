@@ -1,6 +1,9 @@
 name: Commit new Release
 
-on: [pull_request]
+on:
+  pull_request:
+    branches:    
+      - '*'
 
 jobs:
   commit:
