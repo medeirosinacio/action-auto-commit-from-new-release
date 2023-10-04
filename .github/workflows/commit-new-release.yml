@@ -1,6 +1,6 @@
 name: Commit new Release
 
-on: [push]
+on: [pull_request]
 
 jobs:
   commit:
@@ -15,4 +15,6 @@ jobs:
           ref: main
           fetch-depth: 0
       - name: Test
-        run: apt list --installed
+        run: echo ${{ github.event.pull_request.body }}
+      - name: Test 2
+        run: python3 -c "import re, sys; pattern = r'^(## Task|## Motivação)(\n|\r\n)(\n|\r\n)(http)(s)?(\:\/\/)(www\.)?(.*)(## Motivação|## Objetivo)(.*)(\#\# O que foi feito)(.*)(\#\# Nota)?'; text = sys.stdin.read(); print('Correspondência encontrada!') if re.search(pattern, text, re.S | re.I) else print('Nenhuma correspondência encontrada.');" ${{ github.event.pull_request.body }}
