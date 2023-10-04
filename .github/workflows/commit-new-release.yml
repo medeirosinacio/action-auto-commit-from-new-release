@@ -1,9 +1,9 @@
 name: Commit new Release
 
-on:
+on: 
+  push:
   pull_request:
-    branches:    
-      - '*'
+    types: [opened]
 
 jobs:
   commit:
